@@ -2,9 +2,10 @@ import { outdent } from './deps.ts'
 
 import beseo from './beseo.ts'
 import imp from './imp.ts'
+import stylednn from './stylednn.ts';
 
 const routes: Array<{ matcher(request: Request): Promise<boolean>, handler(request: Request): Promise<Response> }>
- = [beseo, imp]
+ = [beseo, imp, stylednn]
 
 function allowCORS(server: (request: Request) => Promise<Response>): (request: Request) => Promise<Response> {
   return async request => {

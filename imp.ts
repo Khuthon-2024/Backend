@@ -47,6 +47,6 @@ export default {
     const { stdout } = await imp.output()
     const log = new TextDecoder().decode(stdout)
 
-    return new Response(JSON.stringify({ resource: mapResult(JSON.parse(log)[0]) }), { status : 200 })
+    return new Response(JSON.stringify({ resource: mapResult(JSON.parse(log)[0]) }), { status : 200, headers: {  "content-type": "application/json; charset=utf-8", } })
   }
 }
